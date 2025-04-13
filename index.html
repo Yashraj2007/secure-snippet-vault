@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Secure Snippet Vault</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Theme Toggle -->
+  <button id="theme-toggle" class="theme-btn"> Change Theme</button>
+
+  <!--  Login Auth Section -->
+  <div class="auth-box">
+    <h2>Login to Access Your Vault</h2>
+    <form id="login-form">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Unlock Vault</button>
+    </form>
+    <p id="auth-msg" class="error-text"></p>
+  </div>
+
+  <!--  Vault Section -->
+  <div id="vault-box" class="vault hidden">
+    <h1>🔒 Secure Snippet Vault</h1>
+    
+    <textarea id="snippet-input" placeholder="Enter your code or secret....." rows="6"></textarea>
+    <div class="controls">
+      <button id="encrypt-btn">Encrypt 🔐</button>
+      <button id="decrypt-btn">Decrypt 🔓</button>
+      <button id="clear-btn">Clear 🧹</button>
+      <button id="copy-btn">Copy 📋</button>
+    </div>
+
+    <p id="char-count">0 chars</p>
+
+    <h3>🧠 Output:</h3>
+    <pre id="snippet-output"></pre>
+
+    <h3>📜 History:</h3>
+    <button id="clear-history-btn">Clear History</button>
+<button id="view-history-btn">View Complete History</button>
+
+  
+    <div id="history" class="history-box">
+      <p>No entries yet...</p>
+    </div>
+  </div>
+
+  <!--  Toast Notification -->
+  <div id="toast"></div>
+
+  <!--  Script -->
+  <script src="script.js"></script>
+</body>
+</html>

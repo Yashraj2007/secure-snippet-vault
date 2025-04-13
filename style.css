@@ -1,0 +1,232 @@
+/* ===== Global Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* ===== Body + Theme ===== */
+  body {
+    background: #edf4ff;
+    color: #000000;
+    padding: 2rem;
+    transition: background 0.4s, color 0.4s;
+  }
+  
+  body.dark-mode {
+    background: #1e1e2f;
+    color: #ffffff;
+  }
+  
+  /* ===== Theme Toggle Button ===== */
+  .theme-btn {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    background: linear-gradient(135deg, #05578e, #4c005b, #24243e); /* Deep luxury tones */
+    color: #fff;
+    font-weight: 700;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.8px;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  
+  .theme-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #1f005c, #5b0060, #870160);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.4);
+  }
+  
+  /* ===== Auth Box ===== */
+  .auth-box {
+    max-width: 400px;
+    margin: 4rem auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease-in-out;
+  }
+  body.dark-mode .auth-box {
+    background: #2c2c3e;
+  }
+  
+  /* ===== Form Inputs ===== */
+  input, textarea {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border 0.3s;
+  }
+  input:focus, textarea:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  textarea {
+    resize: vertical;
+  }
+  
+  /* ===== Button Styles ===== */
+  button {
+    background: #007bff;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    margin: 0.5rem 0.3rem 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+  }
+  button:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+  }
+  
+  /* ===== Error Message ===== */
+  .error-text {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+  
+  /* ===== Vault Section ===== */
+  .vault {
+    max-width: 700px;
+    margin: 2rem auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    animation: slideIn 0.5s ease-in-out;
+  }
+  body.dark-mode .vault {
+    background: #26263a;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(80px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ===== Output & History ===== */
+  pre {
+    background: #f0f0f0;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    font-family: monospace;
+    overflow-x: auto;
+    white-space: pre-wrap;
+  }
+  body.dark-mode pre {
+    background: #1b1b2b;
+  }
+  
+  .history-box {
+    margin-top: 1rem;
+    background: #e6e6e6;
+    padding: 1rem;
+    border-radius: 12px;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  body.dark-mode .history-box {
+    background: #2e2e40;
+  }
+  
+  .history-entry {
+    padding: 0.4rem;
+    font-size: 0.9rem;
+    border-bottom: 1px dashed #aaa;
+    transition: background 0.2s;
+  }
+  .history-entry:hover {
+    background: #d3d3d3;
+  }
+  body.dark-mode .history-entry:hover {
+    background: #3c3c52;
+  }
+  
+  /* ===== Character Count ===== */
+  #char-count {
+    font-size: 0.9rem;
+    text-align: right;
+    color: #555;
+  }
+  body.dark-mode #char-count {
+    color: #ccc;
+  }
+  
+  /* ===== Toast Popup ===== */
+  #toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #00c851;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: bold;
+    display: none;
+    z-index: 999;
+    box-shadow: 0 0 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease-in-out;
+  }
+  #toast.show {
+    display: block;
+    animation: fadeInOut 3s forwards;
+  }
+  #toast.error {
+    background: #ff4444;
+  }
+  @keyframes fadeInOut {
+    0% {opacity: 0; transform: translateY(20px);}
+    10% {opacity: 1; transform: translateY(0);}
+    90% {opacity: 1;}
+    100% {opacity: 0; transform: translateY(20px);}
+  }
+  
+  /* ===== Hidden Class ===== */
+  .hidden {
+    display: none !important;
+  }
+  
+  /* ===== Responsive Design ===== */
+  @media screen and (max-width: 600px) {
+    .vault, .auth-box {
+      padding: 1rem;
+      margin: 1rem;
+    }
+  
+    .controls {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .controls button {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+  
+    #theme-toggle {
+      right: 10px;
+      top: 10px;
+    }
+  }
+  
