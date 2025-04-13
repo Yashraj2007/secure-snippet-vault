@@ -19,7 +19,6 @@ const USERS = {
   const charCount = document.getElementById("char-count");
   const themeToggle = document.getElementById("theme-toggle");
   const clearHistoryBtn = document.getElementById("clear-history-btn");  
-  const showHistoryBtn = document.getElementById("show-history-btn");
   document.getElementById("login-form").addEventListener("submit", async (e) => {
     e.preventDefault();
     const username = document.getElementById("username").value.trim();
